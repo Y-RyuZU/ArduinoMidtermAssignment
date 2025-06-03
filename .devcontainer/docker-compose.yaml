@@ -1,0 +1,6 @@
+services:
+  devcontainer:
+    build:
+      context: ../ArduinoMidtermAssignment
+      dockerfile: Dockerfile
+    container_name: arduino-midterm-assignment

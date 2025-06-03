@@ -1,0 +1,48 @@
+// See https://containers.dev/implementors/json_reference/ for configuration reference
+{
+  "name": "Arduino Midterm Assignment Dev Container",
+  "dockerComposeFile": "docker-compose.yaml",
+  "service": "devcontainer",
+  "remoteUser": "bun",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+    "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
+      "version": "latest",
+      "helm": "latest",
+      "minikube": "none"
+    }
+  },
+  "customizations": {
+    "jetbrains": {
+      "backend": "WebStorm",
+      "plugins": [
+        "Jetbrains TeamCity Plugin",
+        "com.intellij.kubernetes",
+        "cn.yiiguxing.plugin.translate",
+        "com.dsoftware.ghtoolbar",
+        "com.github.camork.fileExpander",
+        "com.github.jk1.ytplugin",
+        "com.github.yunabraska.githubworkflowplugin",
+        "com.intellij.mermaid",
+        "com.intellij.ml.llm",
+        "com.jetbrains.space",
+        "com.anthropic.code.plugin",
+        "org.jetbrains.junie",
+        "com.jetbrains.writerside",
+        "com.mzyupc.a-redis",
+        "com.nasller.CodeGlancePro",
+        "io.plugin.tsnode",
+        "mobi.hsz.idea.gitignore",
+        "org.intellij.plugins.hcl",
+        "org.jetbrains.plugins.github",
+        "org.jetbrains.plugins.gitlab",
+        "zielu.gittoolbox",
+        "com.github.warningimhack3r.intellijshadcnplugin",
+        "org.jetbrains.plugins.go-template",
+        "com.wix.sasslint",
+        "software.xdev.saveactions",
+        "com.apidog.fastrequest",
+      ]
+    }
+  }
+}
