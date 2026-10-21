@@ -19,7 +19,7 @@ interface EasingVisualizerProps {
 export function EasingVisualizer({config, customBezier, isAnimating}: EasingVisualizerProps) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
-    const animationRef = useRef<number>();
+    const animationRef = useRef<number | undefined>(undefined);
     const startTimeRef = useRef<number>(0);
     const [localProgress, setLocalProgress] = useState(0);
     const [isLocalAnimating, setIsLocalAnimating] = useState(false);
