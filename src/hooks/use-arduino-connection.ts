@@ -18,7 +18,7 @@ export function useArduinoConnection(arduinoIp: string) {
     }, [arduinoIp]);
 
     // Arduino APIリクエスト送信
-    const sendRequest = async (endpoint: string, data?: any) => {
+    const sendRequest = async (endpoint: string, data?: unknown) => {
         if (!isValidIp(arduinoIp)) {
             throw new Error('無効なIPアドレスです');
         }

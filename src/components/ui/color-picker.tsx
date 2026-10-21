@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { HexColorPicker } from 'react-colorful';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -68,7 +68,6 @@ export function ColorPicker({
     const [isOpen, setIsOpen] = useState(false);
     const [inputValue, setInputValue] = useState(color);
     const [pickerColor, setPickerColor] = useState(color);
-    const eyeDropperRef = useRef<any>(null);
 
     // 色が外部から変更された時の同期
     useEffect(() => {
@@ -118,7 +117,10 @@ export function ColorPicker({
         }
 
         try {
-            const eyeDropper = new (window as any).EyeDropper();
+            const { EyeDropper } = window as Window & {
+                EyeDropper: new () => { open(): Promise<{ sRGBHex: string }> };
+            };
+            const eyeDropper = new EyeDropper();
             const result = await eyeDropper.open();
             handlePresetSelect(result.sRGBHex);
         } catch (error) {
